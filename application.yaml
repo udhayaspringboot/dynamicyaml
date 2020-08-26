@@ -1,4 +1,15 @@
+
 spring:
+  profiles.active: development
+
+.....
+
+
+
+
+
+spring:
+     profiles: development
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
@@ -16,6 +27,46 @@ spring:
     h2:
       console:
           path: /h2-console
-  
+  ...........
+spring:
+     profiles: test
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    username: sa
+    password: 
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+     
+    h2:
+      console:
+          path: /h2-console 
+          
+          .........
+spring:
+     profiles: production
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    username: sa
+    password: 
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+     
+    h2:
+      console:
+          path: /h2-console          
           
 message : "Hai Udhay"
